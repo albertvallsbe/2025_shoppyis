@@ -1,0 +1,66 @@
+@use "sass:color";
+@use "../base/colors";
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	line-height: 1.5;
+	font-family: inherit;
+	background-color:
+		colors.$neutral_lighter;
+}
+
+button {
+	font-family: inherit;
+	cursor: pointer;
+	border: none;
+	background: none;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+a:hover,
+a:focus,
+a:active {
+	text-decoration: none;
+}
+
+html {
+	font-size: 16px;
+}
+
+body {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	color: colors.$neutral_dark;
+	font-size: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-weight: 600;
+}
+
+p {
+	margin-bottom: 1rem;
+}
+
+.web-options__control input[type="number"]::-webkit-outer-spin-button,
+.web-options__control input[type="number"]::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+.web-options__control input[type="number"] {
+	-moz-appearance: textfield;
+}
