@@ -10,10 +10,13 @@
 @use "./modals/modals";
 
 // Partials
+@use "./partials/layout";
+@use "./partials/card";
 @use "./partials/buttons";
 
 //  Components
 @use "./components/navigation";
+@use "./components/aside";
 
 // Pages
 @use "./pages/home";

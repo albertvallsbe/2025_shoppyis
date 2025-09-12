@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { CartContext } from "../../context/cart/CartContext";
 
 export const Navbar = () => {
+	const context = useContext(CartContext);
 	const linkClass = ({ isActive }: { isActive: boolean }) =>
 		`navbar__link${isActive ? " is-active" : ""}`;
 
@@ -61,7 +64,7 @@ export const Navbar = () => {
 					</NavLink>
 				</li>
 				<li className="navbar__cart" aria-label="Cart">
-					🛒 <span>0</span>
+					🛒 <span>{context.count}</span>
 				</li>
 			</ul>
 		</nav>

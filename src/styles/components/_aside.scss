@@ -1,0 +1,103 @@
+@use "../base/colors";
+@use "../base/variables";
+@use "sass:color";
+
+$nav-height: 75px; // com el projecte base
+
+.product-detail {
+	position: fixed;
+	right: 0;
+	top: $nav-height;
+	width: 360px;
+	height: calc(100vh - $nav-height);
+	z-index: 40;
+
+
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	background: colors.$neutral_lighter;
+	border: 1px solid color.change(colors.$primary_main, $alpha: .15);
+	border-radius: variables.$border-radius;
+	box-shadow: variables.$shadow-light;
+	overflow: hidden;
+	// padding: 0; // el contingut ja té padding als fills
+
+	// (opc.) si vols ocultar/mostrar amb classe
+	&.is-hidden {
+		display: none;
+	}
+}
+
+.product-detail__header {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	align-items: center;
+	gap: variables.$size-small;
+	padding: 1rem;
+	border-bottom: 1px solid color.change(colors.$primary_main, $alpha: .1);
+	background: colors.$neutral_lighter;
+	color: colors.$primary_main;
+}
+
+.product-detail__figure {
+	display: grid;
+	align-items: center;
+	justify-items: center;
+	padding: 1rem;
+
+	min-height: 0;
+	overflow: hidden;
+	background: colors.$neutral_light;
+}
+
+.product-detail__image {
+	width: 100%;
+	height: 100%;
+	display: block;
+	border-radius: variables.$border-radius;
+	object-fit: cover;
+}
+
+.product-detail__body {
+	display: grid;
+	gap: variables.$size-small;
+	padding: 1rem;
+	background: colors.$neutral_lighter;
+}
+
+.product-detail__price {
+	font-size: 1.25rem;
+	font-weight: 600;
+	color: colors.$primary_main;
+}
+
+.product-detail__title {
+	font-size: 1rem;
+	font-weight: 500;
+	color: colors.$primary_main;
+}
+
+.product-detail__desc {
+	font-size: .9rem;
+	color: colors.$neutral_darker;
+}
+
+.product-detail__close {
+	position: absolute;
+	top: variables.$size-medium;
+	right: variables.$size-medium;
+	display: grid;
+	place-items: center;
+	width: 1.5rem;
+	height: 1.5rem;
+	border-radius: 999px;
+	background: colors.$neutral_lighter;
+	border: 1px solid color.change(colors.$primary_main, $alpha: .25);
+	font-weight: 700;
+	line-height: 1;
+	user-select: none;
+
+	&:hover {
+		background: color.scale(colors.$neutral_lighter, $lightness: -5%);
+	}
+}

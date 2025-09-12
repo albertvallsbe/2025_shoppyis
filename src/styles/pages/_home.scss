@@ -9,10 +9,22 @@ body {
 	padding: 0;
 }
 
+.products-grid {
+
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(variables.$product-card-width, 1fr));
+	gap: variables.$size-medium;
+	align-items: start;
+
+	width: min(1200px, 100% - 2rem);
+	margin: variables.$size-medium auto;
+	padding: variables.$size-small;
+}
+
 .card {
 	width: 22rem;
 	margin: 1rem auto;
-	border: 0.5px solid colors.$primary-main;
+	border: 0.5px solid colors.$primary_main;
 	border-radius: variables.$border-radius;
 	box-shadow: variables.$shadow-light;
 

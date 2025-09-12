@@ -22,3 +22,13 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+coverage/
+test-results.html
+reports/
+jest-html-reporters-*.html
+
+
+
+.env
+.env.example

@@ -1,3 +1,5 @@
+import { Layout } from "../../components/Layout/Layout";
+
 export const MyOrders = () => {
-	return <div>My Orders</div>;
+	return <Layout>My Orders</Layout>;
 };
