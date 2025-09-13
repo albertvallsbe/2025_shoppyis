@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { Navbar } from "./components/Navbar/Navbar";
+import { CheckoutAsideCard } from "./components/CheckoutAsideCard/CheckoutAsideCard";
 import { Home } from "./pages/Home/Home";
 import { MyAccount } from "./pages/MyAccount/MyAccount";
 import { MyOrder } from "./pages/MyOrder/MyOrder";
@@ -22,6 +23,7 @@ export const App = () => {
 					<Route path="/*" element={<NotFound />} />
 				</Routes>
 				<Navbar />
+				<CheckoutAsideCard />
 			</ShoppingCartProvider>
 		</>
 	);

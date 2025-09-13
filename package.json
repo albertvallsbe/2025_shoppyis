@@ -6,7 +6,7 @@
     "scripts": {
         "dev": "vite",
         "build": "tsc -p tsconfig.json && vite build",
-        "typecheck:watch": "tsc -w --noEmit --preserveWatchOutput",
+        "type-w": "tsc -w --noEmit --preserveWatchOutput",
         "lint": "eslint .",
         "preview": "vite preview",
         "sass": "sass ./src/styles/main.scss ./public/style.css",

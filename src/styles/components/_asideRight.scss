@@ -2,22 +2,21 @@
 @use "../base/variables";
 @use "sass:color";
 
-$nav-height: 75px; // com el projecte base
+
 
 .product-detail {
 	position: fixed;
 	right: 0;
-	top: $nav-height;
+	top: variables.$nav-height;
 	width: 360px;
-	height: calc(100vh - $nav-height);
-	z-index: 40;
-
+	height: calc(100vh - variables.$nav-height);
 
 	display: grid;
 	grid-template-rows: auto 1fr auto;
 	background: colors.$neutral_lighter;
-	border: 1px solid color.change(colors.$primary_main, $alpha: .15);
-	border-radius: variables.$border-radius;
+	border: 1px solid color.change(colors.$primary_main, $alpha: .50);
+	// border-radius: variables.$border-radius;
+	border-top-left-radius: variables.$border-radius;
 	box-shadow: variables.$shadow-light;
 	overflow: hidden;
 	// padding: 0; // el contingut ja té padding als fills
@@ -34,9 +33,14 @@ $nav-height: 75px; // com el projecte base
 	align-items: center;
 	gap: variables.$size-small;
 	padding: 1rem;
-	border-bottom: 1px solid color.change(colors.$primary_main, $alpha: .1);
+	border-bottom: 1px solid color.change(colors.$primary_main, $alpha: .25);
 	background: colors.$neutral_lighter;
 	color: colors.$primary_main;
+}
+
+.product-detail__header h2 {
+	justify-self: center;
+
 }
 
 .product-detail__figure {
@@ -61,8 +65,23 @@ $nav-height: 75px; // com el projecte base
 .product-detail__body {
 	display: grid;
 	gap: variables.$size-small;
-	padding: 1rem;
+	padding: variables.$size-medium;
 	background: colors.$neutral_lighter;
+	min-height: 0;
+	overflow: auto;
+}
+
+.product-detail__list {
+	display: grid;
+	gap: variables.$size-small;
+	padding: variables.$size-medium;
+
+	/* clau perquè la llista s’enganxi amunt i faci scroll dins del panell */
+	min-height: 0;
+	overflow: auto;
+	align-content: start;
+	justify-items: stretch;
+	grid-auto-rows: min-content;
 }
 
 .product-detail__price {
@@ -83,7 +102,7 @@ $nav-height: 75px; // com el projecte base
 }
 
 .product-detail__close {
-	position: absolute;
+	position: static;
 	top: variables.$size-medium;
 	right: variables.$size-medium;
 	display: grid;
@@ -96,6 +115,7 @@ $nav-height: 75px; // com el projecte base
 	font-weight: 700;
 	line-height: 1;
 	user-select: none;
+	cursor: pointer;
 
 	&:hover {
 		background: color.scale(colors.$neutral_lighter, $lightness: -5%);

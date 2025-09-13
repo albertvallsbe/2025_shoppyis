@@ -7,6 +7,12 @@ export const Navbar = () => {
 	const linkClass = ({ isActive }: { isActive: boolean }) =>
 		`navbar__link${isActive ? " is-active" : ""}`;
 
+	const openCheckoutAsideMenu = (event: React.MouseEvent) => {
+		event.stopPropagation();
+		context.openCheckoutAsideMenu();
+		console.log("Navbar: ");
+	};
+
 	return (
 		<nav className="navbar">
 			<ul className="navbar__left">
@@ -63,8 +69,14 @@ export const Navbar = () => {
 						Sign In
 					</NavLink>
 				</li>
-				<li className="navbar__cart" aria-label="Cart">
-					🛒 <span>{context.count}</span>
+				<li>
+					<button
+						className="checkout-card"
+						aria-label="Cart"
+						onClick={(event) => openCheckoutAsideMenu(event)}
+					>
+						<span>🛒{context.count}</span>
+					</button>
 				</li>
 			</ul>
 		</nav>

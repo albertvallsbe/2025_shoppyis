@@ -1,23 +1,62 @@
 import React, { useContext } from "react";
 import type { Product } from "../../types/product";
 import { CartContext } from "../../context/cart/CartContext";
-import { PlusIcon } from "@heroicons/react/24/solid";
+import { PlusIcon, MinusIcon } from "@heroicons/react/24/solid";
 
 type CardProps = { data: Product };
 
 export const ProductCard = ({ data }: CardProps) => {
 	const context = useContext(CartContext);
 
-	const showProduct = (product: Product) => {
+	const showProduct = (productDetail: Product) => {
 		context.openProductDetail();
-		context.setProductToShow(product);
+		context.closeCheckoutAsideMenu();
+		context.setProductToShow(productDetail);
 	};
 
-	const addProductsToCart = (product: Product, event: React.MouseEvent) => {
+	const addProductsToCart = (productData: Product, event: React.MouseEvent) => {
 		event.stopPropagation();
 		context.setCount(context.count + 1);
-		context.setCartProducts([...context.cartProducts, product]);
-		console.log("CART: ", context.cartProducts);
+		context.setCartProducts([...context.cartProducts, productData]);
+		context.openCheckoutAsideMenu();
+		context.closeProductDetail();
+	};
+
+	const handleProductDelete = (id: number) => {
+		const filteredProducts = context.cartProducts.filter(
+			(product) => product.id !== id
+		);
+		context.setCartProducts(filteredProducts);
+		context.setCount(context.count - 1);
+	};
+
+	const renderIcon = (id: number) => {
+		const isInCart =
+			context.cartProducts.filter((product) => product.id === id).length > 0;
+
+		if (isInCart) {
+			return (
+				<button
+					className="product-card__add"
+					aria-label="Add to cart"
+					type="button"
+					onClick={() => handleProductDelete(data.id)}
+				>
+					<MinusIcon></MinusIcon>
+				</button>
+			);
+		} else {
+			return (
+				<button
+					className="product-card__add"
+					aria-label="Add to cart"
+					type="button"
+					onClick={(event) => addProductsToCart(data, event)}
+				>
+					<PlusIcon></PlusIcon>
+				</button>
+			);
+		}
 	};
 
 	return (
@@ -36,14 +75,7 @@ export const ProductCard = ({ data }: CardProps) => {
 					alt={data.title}
 				/>
 
-				<button
-					className="product-card__add"
-					aria-label="Add to cart"
-					type="button"
-					onClick={(event) => addProductsToCart(data, event)}
-				>
-					<PlusIcon></PlusIcon>
-				</button>
+				{renderIcon(data.id)}
 			</figure>
 			<p className="product-card__meta">
 				<span className="product-card__title">{data.title}</span>

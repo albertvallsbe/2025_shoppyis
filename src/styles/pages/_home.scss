@@ -13,7 +13,7 @@ body {
 
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(variables.$product-card-width, 1fr));
-	gap: variables.$size-medium;
+	gap: variables.$size-large;
 	align-items: start;
 
 	width: min(1200px, 100% - 2rem);

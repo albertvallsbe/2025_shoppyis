@@ -13,10 +13,11 @@
 @use "./partials/layout";
 @use "./partials/card";
 @use "./partials/buttons";
+@use "./partials/order-card";
 
 //  Components
 @use "./components/navigation";
-@use "./components/aside";
+@use "./components/asideRight";
 
 // Pages
 @use "./pages/home";
