@@ -7,17 +7,12 @@ type OrderCardProps = {
 	imageUrl: string;
 	price: number;
 	handleProductDelete?: (id: number) => void;
+	onClick?: () => void;
 };
 
 export const OrderCard = (orderCardProps: OrderCardProps) => {
-	// const context = useContext(CartContext);
-
-	// if (!context.isProductDetailOpen || !context.productToShow) {
-	// 	// opcional: deixa l’aside muntat però ocult si prefereixes
-	// 	return null;
-	// }
-
-	const { id, title, imageUrl, price, handleProductDelete } = orderCardProps;
+	const { id, title, imageUrl, price, handleProductDelete, onClick } =
+		orderCardProps;
 
 	let renderXMarkIcon: React.ReactNode = null;
 	if (handleProductDelete) {
@@ -26,7 +21,10 @@ export const OrderCard = (orderCardProps: OrderCardProps) => {
 				className="order-card__remove"
 				aria-label="Remove item"
 				type="button"
-				onClick={() => handleProductDelete(id)}
+				onClick={(event) => {
+					event.stopPropagation();
+					handleProductDelete(id);
+				}}
 			>
 				<XMarkIcon />
 			</button>
@@ -34,7 +32,7 @@ export const OrderCard = (orderCardProps: OrderCardProps) => {
 	}
 
 	return (
-		<div className="order-card">
+		<div className="order-card" onClick={onClick}>
 			<figure className="order-card__media">
 				<img className="order-card__img" src={imageUrl} alt={title} />
 			</figure>

@@ -4,7 +4,7 @@ import { XMarkIcon } from "@heroicons/react/24/solid";
 import { CartContext } from "../../context/cart/CartContext";
 import { OrderCard } from "../../components/OrderCard/OrderCard";
 import { totalPrice } from "../../utils";
-import type { Order } from "../../types/product";
+import type { Order, Product } from "../../types/product";
 
 export const CheckoutAsideCard = () => {
 	const context = useContext(CartContext);
@@ -38,6 +38,13 @@ export const CheckoutAsideCard = () => {
 		context.setCount(0);
 	};
 
+	const showProduct = (product: Product) => {
+		// CHANGED
+		context.setProductToShow(product); // CHANGED
+		context.closeCheckoutAsideMenu();
+		context.openProductDetail(); // CHANGED
+	};
+
 	return (
 		<aside className="product-detail">
 			<div className="product-detail__header">
@@ -61,6 +68,7 @@ export const CheckoutAsideCard = () => {
 						imageUrl={product.images[0]}
 						price={product.price}
 						handleProductDelete={handleProductDelete}
+						onClick={() => showProduct(product)}
 					/>
 				))}
 			</div>

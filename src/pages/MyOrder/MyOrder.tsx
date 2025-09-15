@@ -11,6 +11,12 @@ export const MyOrder = () => {
 	const lastOrder = context.order.at(-1);
 	const products: Product[] = lastOrder?.products ?? [];
 
+	const showProduct = (product: Product) => {
+		// CHANGED
+		context.setProductToShow(product); // CHANGED
+		context.openProductDetail(); // CHANGED
+	};
+
 	return (
 		<Layout>
 			<section className="order-page">
@@ -31,6 +37,7 @@ export const MyOrder = () => {
 								title={product.title}
 								imageUrl={product.images[0]}
 								price={product.price}
+								onClick={() => showProduct(product)}
 							/>
 						))
 					)}

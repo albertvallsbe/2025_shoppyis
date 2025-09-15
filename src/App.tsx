@@ -7,6 +7,7 @@ import { MyOrder } from "./pages/MyOrder/MyOrder";
 import { MyOrders } from "./pages/MyOrders/MyOrders";
 import { NotFound } from "./pages/NotFound/NotFound";
 import { SignIn } from "./pages/SignIn/SignIn";
+import { ProductDetail } from "./components/ProductDetail/ProductDetail";
 import { CartProvider } from "./context/cart/CartProvider";
 
 export const App = () => {
@@ -23,6 +24,7 @@ export const App = () => {
 					<Route path="/*" element={<NotFound />} />
 				</Routes>
 				<Navbar />
+				<ProductDetail />
 				<CheckoutAsideCard />
 			</CartProvider>
 		</>
