@@ -1,9 +1,9 @@
 import { useState } from "react";
 import type { ReactNode } from "react";
 import { CartContext } from "./CartContext";
-import type { Product } from "../../types/product.js";
+import type { Product, Order } from "../../types/product.js";
 
-export const ShoppingCartProvider = ({ children }: { children: ReactNode }) => {
+export const CartProvider = ({ children }: { children: ReactNode }) => {
 	// Shopping Cart · Increment quantity
 	const [count, setCount] = useState(0);
 
@@ -23,6 +23,9 @@ export const ShoppingCartProvider = ({ children }: { children: ReactNode }) => {
 	// Shopping Cart · Add products to cart
 	const [cartProducts, setCartProducts] = useState<Product[]>([]);
 
+	// Shopping Cart · Order
+	const [order, setOrder] = useState<Order[]>([]);
+
 	return (
 		<CartContext.Provider
 			value={{
@@ -41,6 +44,9 @@ export const ShoppingCartProvider = ({ children }: { children: ReactNode }) => {
 
 				cartProducts,
 				setCartProducts,
+
+				order,
+				setOrder,
 			}}
 		>
 			{children}

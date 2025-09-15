@@ -121,3 +121,45 @@
 		background: color.scale(colors.$neutral_lighter, $lightness: -5%);
 	}
 }
+
+.product-detail__footer {
+	display: grid;
+	gap: variables.$size-small;
+	padding: variables.$size-medium;
+	border-top: 1px solid color.change(colors.$primary_main, $alpha: .25);
+	background: colors.$neutral_lighter;
+}
+
+.product-detail__total {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	align-items: baseline;
+	column-gap: variables.$size-small;
+}
+
+.product-detail__total-label {
+	opacity: .7;
+}
+
+.product-detail__total-value {
+	font-weight: 700;
+	font-size: 1.25rem;
+	color: colors.$primary_main;
+}
+
+.checkout-button {
+	padding: .75rem 1rem;
+	width: 100%;
+	border-radius: variables.$border-radius;
+	border: 1px solid colors.$primary_main;
+	background: colors.$primary_main;
+	color: colors.$neutral_lighter;
+	font-size: 1.25rem;
+	font-weight: 600;
+	cursor: pointer;
+
+	&:disabled {
+		opacity: .5;
+		cursor: not-allowed;
+	}
+}

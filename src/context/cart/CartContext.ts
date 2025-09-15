@@ -1,13 +1,16 @@
 import { createContext } from "react";
 import type { Dispatch, SetStateAction } from "react";
-import type { Product } from "../../types/product.js";
+import type { Product, Order } from "../../types/product.js";
 
 export type CartContextType = {
-	cartProducts: Product[];
-
 	count: number;
 	setCount: Dispatch<SetStateAction<number>>;
+
+	cartProducts: Product[];
 	setCartProducts: Dispatch<SetStateAction<Product[]>>;
+
+	order: Order[];
+	setOrder: Dispatch<SetStateAction<Order[]>>;
 
 	// Checkout Side Menu
 	isCheckoutAsideMenuOpen: boolean;
@@ -26,6 +29,10 @@ export type CartContextType = {
 export const CartContext = createContext<CartContextType>({
 	count: 0,
 	setCount: () => {},
+
+	order: [],
+	setOrder: () => {},
+
 	cartProducts: [],
 	setCartProducts: () => {},
 

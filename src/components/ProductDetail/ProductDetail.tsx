@@ -11,12 +11,7 @@ export const ProductDetail = () => {
 	}
 
 	return (
-		<aside
-			// className={`${
-			// 	context.isProductDetailOpen ? "flex" : "hidden"
-			// } product-detail `}
-			className="product-detail"
-		>
+		<aside className="product-detail">
 			<div className="product-detail__header">
 				<h2>Detail</h2>
 				<button

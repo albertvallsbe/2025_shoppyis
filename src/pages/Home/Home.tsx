@@ -15,7 +15,6 @@ export const Home = (): JSX.Element => {
 
 	return (
 		<Layout>
-			Home
 			<div className="products-grid">
 				{items?.map((item) => (
 					<ProductCard key={item.id} data={item} />
