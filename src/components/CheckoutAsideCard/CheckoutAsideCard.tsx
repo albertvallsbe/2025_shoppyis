@@ -1,7 +1,10 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import { CartContext } from "../../context/cart/CartContext";
 import { OrderCard } from "../../components/OrderCard/OrderCard";
+import { totalPrice } from "../../utils";
+import type { Order } from "../../types/product";
 
 export const CheckoutAsideCard = () => {
 	const context = useContext(CartContext);
@@ -17,6 +20,22 @@ export const CheckoutAsideCard = () => {
 		);
 		context.setCartProducts(filteredProducts);
 		context.setCount(context.count - 1);
+	};
+
+	const handleCheckout = () => {
+		if (context.cartProducts.length === 0) return;
+
+		const orderToAdd: Order = {
+			id: Date.now(),
+			products: context.cartProducts,
+			totalProducts: context.cartProducts.length,
+			totalPrice: totalPrice(context.cartProducts),
+			createdAt: new Date().toISOString(),
+		};
+
+		context.setOrder((previousOrders) => [...previousOrders, orderToAdd]);
+		context.setCartProducts([]);
+		context.setCount(0);
 	};
 
 	return (
@@ -44,6 +63,24 @@ export const CheckoutAsideCard = () => {
 						handleProductDelete={handleProductDelete}
 					/>
 				))}
+			</div>
+			<div className="product-detail__footer">
+				<p className="product-detail__total">
+					<span className="product-detail__total-label">Total:</span>
+					<span className="product-detail__total-value">
+						{totalPrice(context.cartProducts).toFixed(2)}€
+					</span>
+				</p>
+				<Link to="/my-orders/last">
+					<button
+						type="button"
+						className="checkout-button"
+						onClick={() => handleCheckout()}
+						disabled={context.cartProducts.length === 0}
+					>
+						Checkout
+					</button>
+				</Link>
 			</div>
 		</aside>
 	);

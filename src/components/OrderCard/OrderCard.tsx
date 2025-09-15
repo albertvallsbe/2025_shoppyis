@@ -1,11 +1,12 @@
 import { XMarkIcon } from "@heroicons/react/24/solid";
+import React from "react";
 
 type OrderCardProps = {
 	id: number;
 	title: string;
 	imageUrl: string;
 	price: number;
-	handleProductDelete: (id: number) => void;
+	handleProductDelete?: (id: number) => void;
 };
 
 export const OrderCard = (orderCardProps: OrderCardProps) => {
@@ -18,6 +19,20 @@ export const OrderCard = (orderCardProps: OrderCardProps) => {
 
 	const { id, title, imageUrl, price, handleProductDelete } = orderCardProps;
 
+	let renderXMarkIcon: React.ReactNode = null;
+	if (handleProductDelete) {
+		renderXMarkIcon = (
+			<button
+				className="order-card__remove"
+				aria-label="Remove item"
+				type="button"
+				onClick={() => handleProductDelete(id)}
+			>
+				<XMarkIcon />
+			</button>
+		);
+	}
+
 	return (
 		<div className="order-card">
 			<figure className="order-card__media">
@@ -27,14 +42,7 @@ export const OrderCard = (orderCardProps: OrderCardProps) => {
 				<p className="order-card__title">{title}</p>
 				<p className="order-card__price">{price}€</p>
 			</div>
-			<button
-				className="order-card__remove"
-				aria-label="Remove item"
-				type="button"
-				onClick={() => handleProductDelete(id)}
-			>
-				<XMarkIcon />
-			</button>
+			{renderXMarkIcon}
 		</div>
 	);
 };
