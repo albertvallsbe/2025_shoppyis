@@ -19,7 +19,8 @@ export const MyOrders = () => {
 						<Link
 							className="orders-page__item"
 							key={index}
-							to={`/my-orders/${index}`}
+							to={`/my-order/${order.id}`}
+							state={order}
 						>
 							<OrdersCard
 								totalPrice={order.totalPrice}

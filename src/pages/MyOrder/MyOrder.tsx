@@ -1,21 +1,32 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { ChevronLeftIcon } from "@heroicons/react/24/solid";
 import { Layout } from "../../components/Layout/Layout";
 import { CartContext } from "../../context/cart/CartContext";
 import { OrderCard } from "../../components/OrderCard/OrderCard";
-import type { Product } from "../../types/product";
+import type { Product, Order } from "../../types/product";
 
-export const MyOrder = () => {
+export const MyOrder = (): JSX.Element => {
 	const context = useContext(CartContext);
-	const lastOrder = context.order.at(-1);
-	const products: Product[] = lastOrder?.products ?? [];
+	const { id: idOrLast } = useParams<{ id: string }>();
+
+	let selectedOrder: Order | undefined;
+	if (idOrLast === "last") {
+		selectedOrder = context.order.at(-1);
+	} else if (idOrLast) {
+		selectedOrder = context.order.find(
+			(order) => String(order.id) === idOrLast
+		);
+	}
+
+	const products: Product[] = selectedOrder?.products ?? [];
 
 	const showProduct = (product: Product) => {
-		// CHANGED
-		context.setProductToShow(product); // CHANGED
-		context.openProductDetail(); // CHANGED
+		context.setProductToShow(product);
+		context.openProductDetail();
 	};
+
+	const isNotFound = !selectedOrder;
 
 	return (
 		<Layout>
@@ -26,11 +37,19 @@ export const MyOrder = () => {
 					</Link>
 					<h1 className="order-page__title">My Order</h1>
 				</header>
-				<div className="product-detail__list">
-					{products.length === 0 ? (
-						<p className="order-page__empty">No tens cap comanda encara.</p>
-					) : (
-						products.map((product) => (
+
+				{isNotFound ? (
+					<p className="order-page__empty">
+						No s’ha trobat aquesta comanda.{" "}
+						<Link to="/my-orders">Torna a My Orders</Link>
+					</p>
+				) : products.length === 0 ? (
+					<p className="order-page__empty">
+						No tens cap producte en aquesta comanda.
+					</p>
+				) : (
+					<div className="product-detail__list">
+						{products.map((product) => (
 							<OrderCard
 								key={product.id}
 								id={product.id}
@@ -39,9 +58,9 @@ export const MyOrder = () => {
 								price={product.price}
 								onClick={() => showProduct(product)}
 							/>
-						))
-					)}
-				</div>
+						))}
+					</div>
+				)}
 			</section>
 		</Layout>
 	);

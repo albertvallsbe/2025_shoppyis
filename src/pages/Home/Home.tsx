@@ -8,7 +8,7 @@ export const Home = (): JSX.Element => {
 	const [items, setItems] = useState<Product[]>([]);
 
 	useEffect(() => {
-		fetch("https://api.escuelajs.co/api/v1/products")
+		fetch(import.meta.env.VITE_PLATZI_API_BASE)
 			.then((response) => response.json())
 			.then((data: Product[]) => setItems(data ?? []));
 	}, []);

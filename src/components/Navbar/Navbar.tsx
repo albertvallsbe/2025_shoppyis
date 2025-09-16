@@ -36,21 +36,6 @@ export const Navbar = () => {
 						Electronics
 					</NavLink>
 				</li>
-				<li>
-					<NavLink to="/furnitures" className={linkClass}>
-						Furnitures
-					</NavLink>
-				</li>
-				<li>
-					<NavLink to="/toys" className={linkClass}>
-						Toys
-					</NavLink>
-				</li>
-				<li>
-					<NavLink to="/others" className={linkClass}>
-						Others
-					</NavLink>
-				</li>
 			</ul>
 			<ul className="navbar__right">
 				<li className="navbar__email">titu@platzi.com</li>

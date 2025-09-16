@@ -36,6 +36,7 @@ export const CheckoutAsideCard = () => {
 		context.setOrder((previousOrders) => [...previousOrders, orderToAdd]);
 		context.setCartProducts([]);
 		context.setCount(0);
+		context.closeCheckoutAsideMenu();
 	};
 
 	const showProduct = (product: Product) => {
@@ -79,7 +80,7 @@ export const CheckoutAsideCard = () => {
 						{totalPrice(context.cartProducts).toFixed(2)}€
 					</span>
 				</p>
-				<Link to="/my-orders/last">
+				<Link to="/my-order/last">
 					<button
 						type="button"
 						className="checkout-button"
