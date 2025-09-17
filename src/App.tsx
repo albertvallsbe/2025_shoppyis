@@ -7,7 +7,7 @@ import { MyOrder } from "./pages/MyOrder/MyOrder";
 import { MyOrders } from "./pages/MyOrders/MyOrders";
 import { NotFound } from "./pages/NotFound/NotFound";
 import { SignIn } from "./pages/SignIn/SignIn";
-import { ProductDetail } from "./components/ProductDetail/ProductDetail";
+import { ProductDetail } from "./components/ItemPreview/ItemPreview";
 import { CartProvider } from "./context/cart/CartProvider";
 
 export const App = () => {
