@@ -12,7 +12,7 @@
 	// margin-bottom: variables.$size-small;
 
 	padding: variables.$size-small;
-	background: colors.$neutral_lightest;
+	background: colors.$neutral-lightest;
 	/* contrasta amb el fons de la llista */
 	border: 1px solid color.change(colors.$primary_main, $alpha: .25);
 	border-radius: variables.$border-radius;
@@ -53,7 +53,7 @@
 .order-card__title {
 	font-size: 0.875rem;
 	font-weight: 300;
-	color: colors.$neutral_darker;
+	color: colors.$neutral-darker;
 	justify-self: start;
 	text-align: left;
 	margin-bottom: variables.$size-extra-small;
@@ -87,7 +87,7 @@
 	width: 1.5rem;
 	height: 1.5rem;
 	border-radius: 999px;
-	background: colors.$neutral_lighter;
+	background: colors.$neutral-lighter;
 	border: 1px solid color.change(colors.$primary_main, $alpha: .25);
 	font-weight: 700;
 	line-height: 1;
@@ -95,7 +95,7 @@
 	cursor: pointer;
 
 	&:hover {
-		background: colors.$neutral_light;
+		background: colors.$neutral-light;
 	}
 
 	&>svg {

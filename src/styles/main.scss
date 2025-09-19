@@ -9,15 +9,15 @@
 // Modals
 @use "./modals/modals";
 
-// Partials
-@use "./partials/layout";
-@use "./partials/card";
-@use "./partials/buttons";
-@use "./partials/order-card";
+// Objects
+@use "./objects/navigation";
+@use "./objects/layout";
+@use "./objects/aside-right";
 
 //  Components
-@use "./components/navigation";
-@use "./components/asideRight";
+@use "./components/buttons";
+@use "./components/card";
+@use "./components/order-card";
 
 // Pages
 @use "./pages/home";

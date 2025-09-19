@@ -5,7 +5,7 @@
 .button__text {
 	padding: variables.$size-small variables.$size-large;
 	background: colors.$primary-main;
-	color: colors.$neutral_lightest;
+	color: colors.$neutral-lightest;
 	border-radius: variables.$border-radius;
 	font-size: 1rem;
 	cursor: pointer;
@@ -23,7 +23,7 @@
 	background: transparent;
 	border: 1px solid colors.$primary-main;
 	border-radius: variables.$border-radius;
-	color: colors.$neutral_dark;
+	color: colors.$neutral-dark;
 	width: 1.5rem;
 	height: 1.5rem;
 	display: grid;
@@ -39,7 +39,7 @@
 
 .button__icon:hover:not(:disabled) {
 	background: colors.$primary-main;
-	color: colors.$neutral_lightest;
+	color: colors.$neutral-lightest;
 }
 
 
@@ -51,13 +51,13 @@
 	border: 1px solid colors.$primary-main;
 	border-radius: variables.$border-radius;
 	background: transparent;
-	color: colors.$neutral_dark;
+	color: colors.$neutral-dark;
 	cursor: pointer;
 	transition: background 0.2s, color 0.2s;
 
 	&:hover {
 		background: colors.$primary-main;
-		color: colors.$neutral_lightest;
+		color: colors.$neutral-lightest;
 	}
 
 	&:disabled {

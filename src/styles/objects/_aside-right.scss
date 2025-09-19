@@ -13,7 +13,7 @@
 
 	display: grid;
 	grid-template-rows: auto 1fr auto;
-	background: colors.$neutral_lighter;
+	background: colors.$neutral-lighter;
 	border: 1px solid color.change(colors.$primary_main, $alpha: .50);
 	// border-radius: variables.$border-radius;
 	border-top-left-radius: variables.$border-radius;
@@ -34,7 +34,7 @@
 	gap: variables.$size-small;
 	padding: 1rem;
 	border-bottom: 1px solid color.change(colors.$primary_main, $alpha: .25);
-	background: colors.$neutral_lighter;
+	background: colors.$neutral-lighter;
 	color: colors.$primary_main;
 }
 
@@ -51,7 +51,7 @@
 
 	min-height: 0;
 	overflow: hidden;
-	background: colors.$neutral_light;
+	background: colors.$neutral-light;
 }
 
 .product-detail__image {
@@ -66,7 +66,7 @@
 	display: grid;
 	gap: variables.$size-small;
 	padding: variables.$size-medium;
-	background: colors.$neutral_lighter;
+	background: colors.$neutral-lighter;
 	min-height: 0;
 	overflow: auto;
 }
@@ -98,7 +98,7 @@
 
 .product-detail__desc {
 	font-size: .9rem;
-	color: colors.$neutral_darker;
+	color: colors.$neutral-darker;
 }
 
 .product-detail__close {
@@ -110,7 +110,7 @@
 	width: 1.5rem;
 	height: 1.5rem;
 	border-radius: 999px;
-	background: colors.$neutral_lighter;
+	background: colors.$neutral-lighter;
 	border: 1px solid color.change(colors.$primary_main, $alpha: .25);
 	font-weight: 700;
 	line-height: 1;
@@ -118,7 +118,7 @@
 	cursor: pointer;
 
 	&:hover {
-		background: color.scale(colors.$neutral_lighter, $lightness: -5%);
+		background: color.scale(colors.$neutral-lighter, $lightness: -5%);
 	}
 }
 
@@ -127,7 +127,7 @@
 	gap: variables.$size-small;
 	padding: variables.$size-medium;
 	border-top: 1px solid color.change(colors.$primary_main, $alpha: .25);
-	background: colors.$neutral_lighter;
+	background: colors.$neutral-lighter;
 }
 
 .product-detail__total {
@@ -153,7 +153,7 @@
 	border-radius: variables.$border-radius;
 	border: 1px solid colors.$primary_main;
 	background: colors.$primary_main;
-	color: colors.$neutral_lighter;
+	color: colors.$neutral-lighter;
 	font-size: 1.25rem;
 	font-weight: 600;
 	cursor: pointer;

@@ -37,7 +37,7 @@ export const ProductCard = ({ data }: CardProps) => {
 		if (isInCart) {
 			return (
 				<button
-					className="product-card__add"
+					className="item-card__add"
 					aria-label="Add to cart"
 					type="button"
 					onClick={() => handleProductDelete(data.id)}
@@ -48,7 +48,7 @@ export const ProductCard = ({ data }: CardProps) => {
 		} else {
 			return (
 				<button
-					className="product-card__add"
+					className="item-card__add"
 					aria-label="Add to cart"
 					type="button"
 					onClick={(event) => addProductsToCart(data, event)}
@@ -61,25 +61,25 @@ export const ProductCard = ({ data }: CardProps) => {
 
 	return (
 		<div
-			className="product-card"
-			role="article"
-			aria-label="Product card"
+			className="item-card"
+			role="card"
+			aria-label="Item card"
 			onClick={() => showProduct(data)}
 		>
-			<figure className="product-card__figure">
-				<span className="product-card__tag">{data.category.name}</span>
+			<figure className="item-card__figure">
+				<span className="item-card__tag">{data.category.name}</span>
 
 				<img
-					className="product-card__image"
+					className="item-card__image"
 					src={data.images[0]}
 					alt={data.title}
 				/>
 
 				{renderIcon(data.id)}
 			</figure>
-			<p className="product-card__meta">
-				<span className="product-card__title">{data.title}</span>
-				<span className="product-card__price">{data.price}€</span>
+			<p className="item-card__meta">
+				<span className="item-card__title">{data.title}</span>
+				<span className="item-card__price">{data.price}€</span>
 			</p>
 		</div>
 	);
