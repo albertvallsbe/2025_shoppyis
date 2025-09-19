@@ -47,11 +47,11 @@ export const CheckoutAsideCard = () => {
 	};
 
 	return (
-		<aside className="product-detail">
-			<div className="product-detail__header">
+		<aside className="aside-right">
+			<div className="aside-right__header">
 				<h2>My Order</h2>
 				<button
-					className="product-detail__close"
+					className="aside-right__close"
 					type="button"
 					aria-label="Close detail"
 					onClick={context.closeCheckoutAsideMenu}
@@ -60,7 +60,7 @@ export const CheckoutAsideCard = () => {
 				</button>
 			</div>
 
-			<div className="product-detail__list">
+			<div className="aside-right__list">
 				{context.cartProducts.map((product) => (
 					<OrderCard
 						key={product.id}
@@ -73,10 +73,10 @@ export const CheckoutAsideCard = () => {
 					/>
 				))}
 			</div>
-			<div className="product-detail__footer">
-				<p className="product-detail__total">
-					<span className="product-detail__total-label">Total:</span>
-					<span className="product-detail__total-value">
+			<div className="aside-right__footer">
+				<p className="aside-right__total">
+					<span className="aside-right__total-label">Total:</span>
+					<span className="aside-right__total-value">
 						{totalPrice(context.cartProducts).toFixed(2)}€
 					</span>
 				</p>

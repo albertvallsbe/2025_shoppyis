@@ -14,7 +14,7 @@ export const MyOrders = () => {
 					<h1>My Orders</h1>
 				</header>
 
-				<div className="product-detail__list">
+				<div className="aside-right__list">
 					{context.order.map((order, index) => (
 						<Link
 							className="orders-page__item"

@@ -48,7 +48,7 @@ export const MyOrder = (): JSX.Element => {
 						No tens cap producte en aquesta comanda.
 					</p>
 				) : (
-					<div className="product-detail__list">
+					<div className="aside-right__list">
 						{products.map((product) => (
 							<OrderCard
 								key={product.id}
