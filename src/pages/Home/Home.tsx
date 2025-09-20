@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Layout } from "../../components/Layout/Layout";
-import { ProductCard } from "../../components/ItemCard/ItemCard";
-import { ProductDetail } from "../../components/ItemPreview/ItemPreview";
+import { ProductCard } from "../../components/MainItem/MainItem";
+import { ProductDetail } from "../../components/AsideRightItemPreview/AsideRightItemPreview";
 import type { Product } from "../../types/product.js";
 
 export const Home = (): JSX.Element => {

@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { ChevronLeftIcon } from "@heroicons/react/24/solid";
 import { Layout } from "../../components/Layout/Layout";
 import { CartContext } from "../../context/cart/CartContext";
-import { OrderCard } from "../../components/OrderCard/OrderCard";
+import { OrderCard } from "../../components/LineItem/LineItem";
 import type { Product, Order } from "../../types/product";
 
 export const MyOrder = (): JSX.Element => {

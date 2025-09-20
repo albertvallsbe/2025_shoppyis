@@ -1,13 +1,13 @@
 import { Routes, Route } from "react-router-dom";
 import { Navbar } from "./components/Navbar/Navbar";
-import { CheckoutAsideCard } from "./components/CheckoutAsideCard/CheckoutAsideCard";
+import { CheckoutAsideCard } from "./components/AsideRightItemsList/AsideRightItemsList";
 import { Home } from "./pages/Home/Home";
 import { MyAccount } from "./pages/MyAccount/MyAccount";
 import { MyOrder } from "./pages/MyOrder/MyOrder";
 import { MyOrders } from "./pages/MyOrders/MyOrders";
 import { NotFound } from "./pages/NotFound/NotFound";
 import { SignIn } from "./pages/SignIn/SignIn";
-import { ProductDetail } from "./components/ItemPreview/ItemPreview";
+import { ProductDetail } from "./components/AsideRightItemPreview/AsideRightItemPreview";
 import { CartProvider } from "./context/cart/CartProvider";
 
 export const App = () => {

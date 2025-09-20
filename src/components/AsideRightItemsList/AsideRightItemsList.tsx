@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import { CartContext } from "../../context/cart/CartContext";
-import { OrderCard } from "../../components/OrderCard/OrderCard";
+import { OrderCard } from "../LineItem/LineItem";
 import { totalPrice } from "../../utils";
 import type { Order, Product } from "../../types/product";
 
