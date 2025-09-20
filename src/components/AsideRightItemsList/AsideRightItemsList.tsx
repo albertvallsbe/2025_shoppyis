@@ -51,7 +51,7 @@ export const CheckoutAsideCard = () => {
 			<div className="aside-right__header">
 				<h2>My Order</h2>
 				<button
-					className="aside-right__close"
+					className="aside-right__circle-icon"
 					type="button"
 					aria-label="Close detail"
 					onClick={context.closeCheckoutAsideMenu}
@@ -76,14 +76,14 @@ export const CheckoutAsideCard = () => {
 			<div className="aside-right__footer">
 				<p className="aside-right__total">
 					<span className="aside-right__total-label">Total:</span>
-					<span className="aside-right__total-value">
+					<span className="aside-right__price-label">
 						{totalPrice(context.cartProducts).toFixed(2)}€
 					</span>
 				</p>
 				<Link to="/my-order/last">
 					<button
 						type="button"
-						className="checkout-button"
+						className="button__text"
 						onClick={() => handleCheckout()}
 						disabled={context.cartProducts.length === 0}
 					>

@@ -9,14 +9,14 @@ export const OrdersCard = (OrdersCardProps: OrdersCardProps) => {
 	const { totalPrice, totalProducts } = OrdersCardProps;
 
 	return (
-		<article className="orders-card">
-			<div className="orders-card__left">
-				<span className="orders-card__date">01.02.23</span>
-				<span className="orders-card__count">{totalProducts} Articles</span>
+		<article className="summary-item">
+			<div className="summary-item__left">
+				<span className="summary-item__date">01.02.23</span>
+				<span className="summary-item__count">{totalProducts} Articles</span>
 			</div>
-			<div className="orders-card__right">
-				<span className="orders-card__total">{totalPrice}€</span>
-				<span className="icon">
+			<div className="summary-item__right">
+				<span className="summary-item__price-label">{totalPrice}€</span>
+				<span className="summary-item__circle-icon">
 					<ChevronRightIcon />
 				</span>
 			</div>

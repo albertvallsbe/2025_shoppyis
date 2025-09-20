@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { Layout } from "../../components/Layout/Layout";
-import { ProductCard } from "../../components/MainItem/MainItem";
+import { MainItem } from "../../components/MainItem/MainItem";
 import { ProductDetail } from "../../components/AsideRightItemPreview/AsideRightItemPreview";
 import type { Product } from "../../types/product.js";
 
-export const Home = (): JSX.Element => {
+export const HomePage = (): JSX.Element => {
 	const [items, setItems] = useState<Product[]>([]);
 
 	useEffect(() => {
@@ -15,9 +15,9 @@ export const Home = (): JSX.Element => {
 
 	return (
 		<Layout>
-			<div className="items-card-grid">
+			<div className="main-items-grid">
 				{items?.map((item) => (
-					<ProductCard key={item.id} data={item} />
+					<MainItem key={item.id} data={item} />
 				))}
 			</div>
 			<ProductDetail />

@@ -6,6 +6,12 @@
 @use "./base/typography";
 @use "./base/variables";
 
+// Mixins
+@use "./mixins/mixins";
+
+// Reusables
+@use "reusable/reusable-icons";
+
 // Modals
 @use "./modals/modals";
 
@@ -16,8 +22,9 @@
 
 //  Components
 @use "./components/buttons";
-@use "./components/card";
-@use "./components/order-card";
+@use "./components/main-item";
+@use "./components/line-item";
+@use "./components/summary-item";
 
 // Pages
 @use "./pages/home";

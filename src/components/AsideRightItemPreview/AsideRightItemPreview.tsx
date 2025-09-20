@@ -15,7 +15,7 @@ export const ProductDetail = () => {
 			<div className="aside-right__header">
 				<h2>Detail</h2>
 				<button
-					className="aside-right__close"
+					className="aside-right__circle-icon"
 					type="button"
 					aria-label="Close detail"
 					onClick={context.closeProductDetail}
@@ -33,9 +33,7 @@ export const ProductDetail = () => {
 			</figure>
 
 			<div className="aside-right__body">
-				<span className="aside-right__price">
-					{context.productToShow.price}€
-				</span>
+				<span className="price-label">{context.productToShow.price}€</span>
 				<span className="aside-right__title">
 					{context.productToShow.title}
 				</span>

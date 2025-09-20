@@ -1,12 +1,12 @@
 import { Routes, Route } from "react-router-dom";
 import { Navbar } from "./components/Navbar/Navbar";
 import { CheckoutAsideCard } from "./components/AsideRightItemsList/AsideRightItemsList";
-import { Home } from "./pages/Home/Home";
-import { MyAccount } from "./pages/MyAccount/MyAccount";
-import { MyOrder } from "./pages/MyOrder/MyOrder";
-import { MyOrders } from "./pages/MyOrders/MyOrders";
-import { NotFound } from "./pages/NotFound/NotFound";
-import { SignIn } from "./pages/SignIn/SignIn";
+import { HomePage } from "./pages/HomePage/HomePage";
+import { MyAccountPage } from "./pages/MyAccountPage/MyAccountPage";
+import { MyOrderPage } from "./pages/MyOrderPage/MyOrderPage";
+import { MyOrdersPage } from "./pages/MyOrdersPage/MyOrdersPage";
+import { NotFoundPage } from "./pages/NotFoundPage/NotFoundPage";
+import { SignInPage } from "./pages/SignInPage/SignInPage";
 import { ProductDetail } from "./components/AsideRightItemPreview/AsideRightItemPreview";
 import { CartProvider } from "./context/cart/CartProvider";
 
@@ -15,13 +15,14 @@ export const App = () => {
 		<>
 			<CartProvider>
 				<Routes>
-					<Route path="/" element={<Home />} />
-					<Route path="/my-account" element={<MyAccount />} />
-					<Route path="/my-orders" element={<MyOrders />} />
-					<Route path="/my-order/last" element={<MyOrder />} />
-					<Route path="/my-order/:id" element={<MyOrder />} />
-					<Route path="/sign-in" element={<SignIn />} />
-					<Route path="/*" element={<NotFound />} />
+					<Route path="/" element={<HomePage />} />
+					<Route path="/home" element={<HomePage />} />
+					<Route path="/my-account" element={<MyAccountPage />} />
+					<Route path="/my-orders" element={<MyOrdersPage />} />
+					<Route path="/my-order/last" element={<MyOrderPage />} />
+					<Route path="/my-order/:id" element={<MyOrderPage />} />
+					<Route path="/sign-in" element={<SignInPage />} />
+					<Route path="/*" element={<NotFoundPage />} />
 				</Routes>
 				<Navbar />
 				<ProductDetail />

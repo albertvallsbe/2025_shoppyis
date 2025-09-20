@@ -6,7 +6,7 @@ import { CartContext } from "../../context/cart/CartContext";
 import { OrderCard } from "../../components/LineItem/LineItem";
 import type { Product, Order } from "../../types/product";
 
-export const MyOrder = (): JSX.Element => {
+export const MyOrderPage = (): JSX.Element => {
 	const context = useContext(CartContext);
 	const { id: idOrLast } = useParams<{ id: string }>();
 

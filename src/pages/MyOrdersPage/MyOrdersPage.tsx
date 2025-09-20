@@ -4,7 +4,7 @@ import { Layout } from "../../components/Layout/Layout";
 import { CartContext } from "../../context/cart/CartContext";
 import { OrdersCard } from "../../components/SummaryItem/SummaryItem";
 
-export const MyOrders = () => {
+export const MyOrdersPage = () => {
 	const context = useContext(CartContext);
 
 	return (
