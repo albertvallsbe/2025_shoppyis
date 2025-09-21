@@ -11,11 +11,11 @@ export const ProductDetail = () => {
 	}
 
 	return (
-		<aside className="product-detail">
-			<div className="product-detail__header">
+		<aside className="aside-right">
+			<div className="aside-right__header">
 				<h2>Detail</h2>
 				<button
-					className="product-detail__close"
+					className="aside-right__circle-icon"
 					type="button"
 					aria-label="Close detail"
 					onClick={context.closeProductDetail}
@@ -24,24 +24,20 @@ export const ProductDetail = () => {
 				</button>
 			</div>
 
-			<figure className="product-detail__figure">
+			<figure className="aside-right__figure">
 				<img
-					className="product-detail__image"
+					className="aside-right__image"
 					src={context.productToShow.images[0]}
 					alt={context.productToShow.title}
 				/>
 			</figure>
 
-			<div className="product-detail__body">
-				<span className="product-detail__price">
-					{context.productToShow.price}€
-				</span>
-				<span className="product-detail__title">
+			<div className="aside-right__body">
+				<span className="price-label">{context.productToShow.price}€</span>
+				<span className="aside-right__title">
 					{context.productToShow.title}
 				</span>
-				<p className="product-detail__desc">
-					{context.productToShow.description}
-				</p>
+				<p className="aside-right__desc">{context.productToShow.description}</p>
 			</div>
 		</aside>
 	);

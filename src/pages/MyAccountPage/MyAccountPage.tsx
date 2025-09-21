@@ -1,5 +1,5 @@
 import { Layout } from "../../components/Layout/Layout";
 
-export const MyAccount = () => {
+export const MyAccountPage = () => {
 	return <Layout>My account</Layout>;
 };

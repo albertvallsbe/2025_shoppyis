@@ -1,7 +1,6 @@
 @use "../base/colors";
 @use "../base/variables";
 
-
 .order-page {
 	width: 20rem;
 	margin: 0 auto;
@@ -9,14 +8,12 @@
 	row-gap: variables.$size-medium;
 }
 
-
 .order-page__header {
 	display: grid;
 	grid-template-columns: auto 1fr auto;
 	align-items: center;
 	position: relative;
 	min-height: 2.25rem;
-
 }
 
 .order-page__back {
@@ -28,7 +25,7 @@
 .order-page__back-icon {
 	width: 1.5rem;
 	height: 1.5rem;
-	color: colors.$neutral_darker;
+	color: colors.$neutral-darker;
 	cursor: pointer;
 }
 
@@ -39,10 +36,8 @@
 	color: colors.$primary_main;
 }
 
-
-
 .order-page__empty {
-	color: colors.$neutral_darker;
+	color: colors.$neutral-darker;
 	text-align: center;
 	padding: variables.$size-medium;
 }

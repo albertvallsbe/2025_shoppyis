@@ -3,9 +3,9 @@ import type { Product } from "../../types/product";
 import { CartContext } from "../../context/cart/CartContext";
 import { PlusIcon, MinusIcon } from "@heroicons/react/24/solid";
 
-type CardProps = { data: Product };
+type ItemProps = { data: Product };
 
-export const ProductCard = ({ data }: CardProps) => {
+export const MainItem = ({ data }: ItemProps) => {
 	const context = useContext(CartContext);
 
 	const showProduct = (productDetail: Product) => {
@@ -37,7 +37,7 @@ export const ProductCard = ({ data }: CardProps) => {
 		if (isInCart) {
 			return (
 				<button
-					className="product-card__add"
+					className="main-item__circle-icon"
 					aria-label="Add to cart"
 					type="button"
 					onClick={() => handleProductDelete(data.id)}
@@ -48,12 +48,12 @@ export const ProductCard = ({ data }: CardProps) => {
 		} else {
 			return (
 				<button
-					className="product-card__add"
+					className="main-item__circle-icon"
 					aria-label="Add to cart"
 					type="button"
 					onClick={(event) => addProductsToCart(data, event)}
 				>
-					<PlusIcon></PlusIcon>
+					<PlusIcon />
 				</button>
 			);
 		}
@@ -61,25 +61,25 @@ export const ProductCard = ({ data }: CardProps) => {
 
 	return (
 		<div
-			className="product-card"
-			role="article"
-			aria-label="Product card"
+			className="main-item"
+			role="card"
+			aria-label="Main item"
 			onClick={() => showProduct(data)}
 		>
-			<figure className="product-card__figure">
-				<span className="product-card__tag">{data.category.name}</span>
+			<figure className="main-item__figure">
+				<span className="main-item__tag">{data.category.name}</span>
 
 				<img
-					className="product-card__image"
+					className="main-item__image"
 					src={data.images[0]}
 					alt={data.title}
 				/>
 
 				{renderIcon(data.id)}
 			</figure>
-			<p className="product-card__meta">
-				<span className="product-card__title">{data.title}</span>
-				<span className="product-card__price">{data.price}€</span>
+			<p className="main-item__meta">
+				<span className="main-item__title">{data.title}</span>
+				<span className="main-item__price-label">{data.price}€</span>
 			</p>
 		</div>
 	);

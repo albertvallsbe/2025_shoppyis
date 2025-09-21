@@ -18,7 +18,7 @@ export const OrderCard = (orderCardProps: OrderCardProps) => {
 	if (handleProductDelete) {
 		renderXMarkIcon = (
 			<button
-				className="order-card__remove"
+				className="line-item__circle-icon"
 				aria-label="Remove item"
 				type="button"
 				onClick={(event) => {
@@ -32,13 +32,13 @@ export const OrderCard = (orderCardProps: OrderCardProps) => {
 	}
 
 	return (
-		<div className="order-card" onClick={onClick}>
-			<figure className="order-card__media">
-				<img className="order-card__img" src={imageUrl} alt={title} />
+		<div className="line-item" onClick={onClick}>
+			<figure className="line-item__media">
+				<img className="line-item__img" src={imageUrl} alt={title} />
 			</figure>
-			<div className="order-card__info">
-				<p className="order-card__title">{title}</p>
-				<p className="order-card__price">{price}€</p>
+			<div className="line-item__info">
+				<p className="line-item__title">{title}</p>
+				<p className="line-item__price-label">{price}€</p>
 			</div>
 			{renderXMarkIcon}
 		</div>

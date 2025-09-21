@@ -3,10 +3,10 @@ import { Link, useParams } from "react-router-dom";
 import { ChevronLeftIcon } from "@heroicons/react/24/solid";
 import { Layout } from "../../components/Layout/Layout";
 import { CartContext } from "../../context/cart/CartContext";
-import { OrderCard } from "../../components/OrderCard/OrderCard";
+import { OrderCard } from "../../components/LineItem/LineItem";
 import type { Product, Order } from "../../types/product";
 
-export const MyOrder = (): JSX.Element => {
+export const MyOrderPage = (): JSX.Element => {
 	const context = useContext(CartContext);
 	const { id: idOrLast } = useParams<{ id: string }>();
 
@@ -48,7 +48,7 @@ export const MyOrder = (): JSX.Element => {
 						No tens cap producte en aquesta comanda.
 					</p>
 				) : (
-					<div className="product-detail__list">
+					<div className="aside-right__list">
 						{products.map((product) => (
 							<OrderCard
 								key={product.id}
