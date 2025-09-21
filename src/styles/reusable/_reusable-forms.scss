@@ -1,0 +1,109 @@
+@use "sass:color";
+@use "../base/colors";
+@use "../base/variables";
+
+
+.formSelect {
+	/* paddingMargin(0.75rem, $margin auto) */
+	padding: 0.75rem;
+	margin: variables.$size-extra-small auto;
+
+	background-color: inherit;
+	color: inherit;
+
+	/* hover($neutral-lightest, inherit, $primary-main, $neutral-dark) */
+	border: 1px solid colors.$neutral-dark;
+
+	&:hover {
+		color: inherit;
+		background-color: colors.$neutral-lightest;
+		border: 1px solid colors.$primary-main;
+	}
+
+	border-radius: variables.$border-radius;
+
+	font-size: variables.$size_medium;
+	position: relative;
+	padding-right: 40px;
+
+	&:focus {
+		outline: none;
+
+		/* style($primary-main, $neutral-lighter) */
+		color: colors.$primary-main;
+		background-color: colors.$neutral-lighter;
+
+		box-shadow: 0 0 0 2px rgba(colors.$neutral-darker, 0.1);
+	}
+
+	option {
+		/* style($primary-main, $neutral-lighter) */
+		color: colors.$primary-main;
+		background-color: colors.$neutral-lighter;
+	}
+}
+
+.formInput {
+	/* paddingMargin(0.75rem, $margin auto) */
+	padding: 0.75rem;
+	margin: variables.$size-extra-small auto;
+
+	background-color: inherit;
+	color: inherit;
+
+	/* hover($neutral-lightest, inherit, $primary-main, $neutral-dark) */
+	border: 1px solid colors.$neutral-dark;
+
+	&:hover {
+		color: inherit;
+		background-color: colors.$neutral-lightest;
+		border: 1px solid colors.$primary-main;
+	}
+
+	border-radius: variables.$border-radius;
+
+	font-size: variables.$size-medium;
+}
+
+.consent {
+	/* mainBox(row, center, center) */
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+	align-self: center;
+
+	/* paddingMargin(0, $margin auto) */
+	padding: 0;
+	margin: variables.$size-extra-small auto;
+}
+
+.form {
+	/* mainBox(column, flex-start, flex-start) */
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-content: center;
+	align-items: flex-start;
+	align-self: center;
+
+	/* paddingMargin($padding, $margin) */
+	padding: variables.$size-extra-small;
+	margin: variables.$size-extra-small;
+
+	gap: variables.$size-small;
+	hyphens: auto;
+	font-size: variables.$size_small;
+	line-height: 1.5;
+	text-align: center;
+	overflow: hidden;
+
+	p {
+		text-align: left;
+
+		span {
+			text-align: left;
+		}
+	}
+}

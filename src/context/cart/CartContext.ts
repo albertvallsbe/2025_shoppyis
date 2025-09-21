@@ -3,11 +3,20 @@ import type { Dispatch, SetStateAction } from "react";
 import type { Product, Order } from "../../types/product.js";
 
 export type CartContextType = {
-	count: number;
-	setCount: Dispatch<SetStateAction<number>>;
-
 	cartProducts: Product[];
 	setCartProducts: Dispatch<SetStateAction<Product[]>>;
+
+	items: Product[];
+	setItems: Dispatch<SetStateAction<Product[]>>;
+
+	searchByTitle: string;
+	setSearchByTitle: Dispatch<SetStateAction<string>>;
+
+	searchByCategory: string;
+	setSearchByCategory: Dispatch<SetStateAction<string>>;
+
+	filteredItems: Product[];
+	setFilteredItems: Dispatch<SetStateAction<Product[]>>;
 
 	order: Order[];
 	setOrder: Dispatch<SetStateAction<Order[]>>;
@@ -27,8 +36,17 @@ export type CartContextType = {
 };
 
 export const CartContext = createContext<CartContextType>({
-	count: 0,
-	setCount: () => {},
+	items: [],
+	setItems: () => {},
+
+	searchByTitle: "",
+	setSearchByTitle: () => {},
+
+	searchByCategory: "",
+	setSearchByCategory: () => {},
+
+	filteredItems: [],
+	setFilteredItems: () => {},
 
 	order: [],
 	setOrder: () => {},

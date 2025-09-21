@@ -10,30 +10,69 @@ export const Navbar = () => {
 	const openCheckoutAsideMenu = (event: React.MouseEvent) => {
 		event.stopPropagation();
 		context.openCheckoutAsideMenu();
-		console.log("Navbar: ");
 	};
 
 	return (
 		<nav className="navbar">
 			<ul className="navbar__left">
 				<li className="navbar__brand">
-					<NavLink to="/" className="navbar__brand-link">
+					<NavLink
+						to="/"
+						onClick={() => {
+							context.setSearchByCategory("");
+							context.setSearchByTitle("");
+						}}
+						className="navbar__brand-link"
+					>
 						Shoppyis
 					</NavLink>
 				</li>
 				<li>
-					<NavLink to="/" className={linkClass}>
+					<NavLink
+						to="/"
+						onClick={() => {
+							context.setSearchByCategory("");
+							context.setSearchByTitle("");
+						}}
+						className={linkClass}
+					>
 						All
 					</NavLink>
 				</li>
 				<li>
-					<NavLink to="/clothes" className={linkClass}>
+					<NavLink
+						to="/electronics"
+						onClick={() => {
+							context.setSearchByCategory("electronics");
+							context.setSearchByTitle("");
+						}}
+						className={linkClass}
+					>
+						Electronics
+					</NavLink>
+				</li>
+				<li>
+					<NavLink
+						to="/clothes"
+						onClick={() => {
+							context.setSearchByCategory("clothes");
+							context.setSearchByTitle("");
+						}}
+						className={linkClass}
+					>
 						Clothes
 					</NavLink>
 				</li>
 				<li>
-					<NavLink to="/electronics" className={linkClass}>
-						Electronics
+					<NavLink
+						to="/shoes"
+						onClick={() => {
+							context.setSearchByCategory("shoes");
+							context.setSearchByTitle("");
+						}}
+						className={linkClass}
+					>
+						Shoes
 					</NavLink>
 				</li>
 			</ul>
@@ -60,7 +99,7 @@ export const Navbar = () => {
 						aria-label="Cart"
 						onClick={(event) => openCheckoutAsideMenu(event)}
 					>
-						<span>🛒{context.count}</span>
+						<span>🛒{context.cartProducts.length}</span>
 					</button>
 				</li>
 			</ul>

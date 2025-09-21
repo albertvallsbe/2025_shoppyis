@@ -16,7 +16,6 @@ export const MainItem = ({ data }: ItemProps) => {
 
 	const addProductsToCart = (productData: Product, event: React.MouseEvent) => {
 		event.stopPropagation();
-		context.setCount(context.count + 1);
 		context.setCartProducts([...context.cartProducts, productData]);
 		context.openCheckoutAsideMenu();
 		context.closeProductDetail();
@@ -27,7 +26,6 @@ export const MainItem = ({ data }: ItemProps) => {
 			(product) => product.id !== id
 		);
 		context.setCartProducts(filteredProducts);
-		context.setCount(context.count - 1);
 	};
 
 	const renderIcon = (id: number) => {
