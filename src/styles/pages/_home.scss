@@ -1,7 +1,12 @@
 @use "sass:color";
 @use "../base/colors";
 @use "../base/variables";
+@use "../reusable/reusable-forms";
 
+.home-search {
+	@extend .formInput;
+	margin-left: variables.$size-large;
+}
 
 .main-items-grid {
 	display: grid;

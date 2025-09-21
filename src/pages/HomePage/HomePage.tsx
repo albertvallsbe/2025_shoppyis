@@ -25,7 +25,7 @@ export const HomePage = (): JSX.Element => {
 			<input
 				type="text"
 				placeholder="Search a product"
-				className="formInput"
+				className="home-search"
 				onChange={(event) => context.setSearchByTitle(event.target.value)}
 			/>
 			<div className="main-items-grid">
