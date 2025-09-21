@@ -19,7 +19,6 @@ export const CheckoutAsideCard = () => {
 			(product) => product.id !== id
 		);
 		context.setCartProducts(filteredProducts);
-		context.setCount(context.count - 1);
 	};
 
 	const handleCheckout = () => {
@@ -35,15 +34,14 @@ export const CheckoutAsideCard = () => {
 
 		context.setOrder((previousOrders) => [...previousOrders, orderToAdd]);
 		context.setCartProducts([]);
-		context.setCount(0);
 		context.closeCheckoutAsideMenu();
+		context.setSearchByTitle("");
 	};
 
 	const showProduct = (product: Product) => {
-		// CHANGED
-		context.setProductToShow(product); // CHANGED
+		context.setProductToShow(product);
 		context.closeCheckoutAsideMenu();
-		context.openProductDetail(); // CHANGED
+		context.openProductDetail();
 	};
 
 	return (
