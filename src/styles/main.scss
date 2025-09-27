@@ -9,25 +9,26 @@
 // Mixins
 @use "./mixins/mixins";
 
-// Reusables
-@use "reusable/reusable-icons";
-@use "reusable/reusable-forms";
+// Globals
+@use "./globals/typography-global";
 
-// Modals
-@use "./modals/modals";
-
-// Objects
-@use "./objects/navigation";
-@use "./objects/layout";
-@use "./objects/aside-right";
+// Elements
+@use "./elements/buttons";
+@use "./elements/icons";
+@use "./elements/forms";
 
 //  Components
-@use "./components/buttons";
 @use "./components/main-item";
 @use "./components/line-item";
 @use "./components/summary-item";
 
+@use "./components/navigation";
+@use "./components/layout";
+@use "./components/aside-right";
+
+// Modals
+@use "./modals/modals";
+
 // Pages
 @use "./pages/home";
-@use "./pages/_my-orders.scss";
-@use "./pages/_my-order.scss";
+@use "./pages/_orders.scss";

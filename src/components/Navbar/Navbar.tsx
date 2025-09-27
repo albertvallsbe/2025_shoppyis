@@ -14,8 +14,8 @@ export const Navbar = () => {
 
 	return (
 		<nav className="navbar">
-			<ul className="navbar__left">
-				<li className="navbar__brand">
+			<div className="navbar__left">
+				<h3>
 					<NavLink
 						to="/"
 						onClick={() => {
@@ -26,83 +26,88 @@ export const Navbar = () => {
 					>
 						Shoppyis
 					</NavLink>
-				</li>
-				<li>
-					<NavLink
-						to="/"
-						onClick={() => {
-							context.setSearchByCategory("");
-							context.setSearchByTitle("");
-						}}
-						className={linkClass}
-					>
-						All
-					</NavLink>
-				</li>
-				<li>
-					<NavLink
-						to="/electronics"
-						onClick={() => {
-							context.setSearchByCategory("electronics");
-							context.setSearchByTitle("");
-						}}
-						className={linkClass}
-					>
-						Electronics
-					</NavLink>
-				</li>
-				<li>
-					<NavLink
-						to="/clothes"
-						onClick={() => {
-							context.setSearchByCategory("clothes");
-							context.setSearchByTitle("");
-						}}
-						className={linkClass}
-					>
-						Clothes
-					</NavLink>
-				</li>
-				<li>
-					<NavLink
-						to="/shoes"
-						onClick={() => {
-							context.setSearchByCategory("shoes");
-							context.setSearchByTitle("");
-						}}
-						className={linkClass}
-					>
-						Shoes
-					</NavLink>
-				</li>
-			</ul>
-			<ul className="navbar__right">
-				<li className="navbar__email">titu@platzi.com</li>
-				<li>
-					<NavLink to="/my-orders" className={linkClass}>
-						My Orders
-					</NavLink>
-				</li>
-				<li>
-					<NavLink to="/my-account" className={linkClass}>
-						My Account
-					</NavLink>
-				</li>
-				<li>
-					<NavLink to="/sign-in" className={linkClass}>
-						Sign In
-					</NavLink>
-				</li>
-				<li>
-					<button
-						className="checkout-card"
-						aria-label="Cart"
-						onClick={(event) => openCheckoutAsideMenu(event)}
-					>
-						<span>🛒{context.cartProducts.length}</span>
-					</button>
-				</li>
-			</ul>
+				</h3>
+				<ul>
+					<li>
+						<NavLink
+							to="/"
+							onClick={() => {
+								context.setSearchByCategory("");
+								context.setSearchByTitle("");
+							}}
+							className={linkClass}
+						>
+							All
+						</NavLink>
+					</li>
+					<li>
+						<NavLink
+							to="/electronics"
+							onClick={() => {
+								context.setSearchByCategory("electronics");
+								context.setSearchByTitle("");
+							}}
+							className={linkClass}
+						>
+							Electronics
+						</NavLink>
+					</li>
+					<li>
+						<NavLink
+							to="/clothes"
+							onClick={() => {
+								context.setSearchByCategory("clothes");
+								context.setSearchByTitle("");
+							}}
+							className={linkClass}
+						>
+							Clothes
+						</NavLink>
+					</li>
+					<li>
+						<NavLink
+							to="/shoes"
+							onClick={() => {
+								context.setSearchByCategory("shoes");
+								context.setSearchByTitle("");
+							}}
+							className={linkClass}
+						>
+							Shoes
+						</NavLink>
+					</li>
+				</ul>
+			</div>
+			<div className="navbar__right">
+				<ul>
+					<li>
+						<NavLink to="/my-orders" className={linkClass}>
+							My Orders
+						</NavLink>
+					</li>
+					<li>
+						<NavLink to="/my-account" className={linkClass}>
+							My Account
+						</NavLink>
+					</li>
+					<li className="navbar__user">titu@platzi.com</li>
+					<li>
+						<NavLink to="/sign-in" className={linkClass}>
+							Sign In
+						</NavLink>
+					</li>
+					<li>
+						<button
+							className="navbar__checkout"
+							aria-label="Cart"
+							onClick={(event) => openCheckoutAsideMenu(event)}
+						>
+							<span>🛒</span>
+							<span>{context.cartProducts.length}</span>
+						</button>
+					</li>
+				</ul>
+			</div>
 		</nav>
 	);
 };

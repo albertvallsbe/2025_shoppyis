@@ -11,12 +11,12 @@ export const OrdersCard = (OrdersCardProps: OrdersCardProps) => {
 	return (
 		<article className="summary-item">
 			<div className="summary-item__left">
-				<span className="summary-item__date">01.02.23</span>
-				<span className="summary-item__count">{totalProducts} Articles</span>
+				<label>01.02.23</label>
+				<label>{totalProducts} Articles</label>
 			</div>
 			<div className="summary-item__right">
-				<span className="summary-item__price-label">{totalPrice}€</span>
-				<span className="summary-item__circle-icon">
+				<h4 className="price-label">{totalPrice.toFixed(2)}€</h4>
+				<span className="circle-icon">
 					<ChevronRightIcon />
 				</span>
 			</div>

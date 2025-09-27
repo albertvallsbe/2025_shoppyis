@@ -35,8 +35,8 @@ export const MainItem = ({ data }: ItemProps) => {
 		if (isInCart) {
 			return (
 				<button
-					className="main-item__circle-icon"
-					aria-label="Add to cart"
+					className="circle-icon"
+					aria-label="Remove to cart"
 					type="button"
 					onClick={() => handleProductDelete(data.id)}
 				>
@@ -46,7 +46,7 @@ export const MainItem = ({ data }: ItemProps) => {
 		} else {
 			return (
 				<button
-					className="main-item__circle-icon"
+					className="circle-icon"
 					aria-label="Add to cart"
 					type="button"
 					onClick={(event) => addProductsToCart(data, event)}
@@ -58,7 +58,7 @@ export const MainItem = ({ data }: ItemProps) => {
 	};
 
 	return (
-		<div
+		<article
 			className="main-item"
 			role="card"
 			aria-label="Main item"
@@ -75,10 +75,11 @@ export const MainItem = ({ data }: ItemProps) => {
 
 				{renderIcon(data.id)}
 			</figure>
-			<p className="main-item__meta">
-				<span className="main-item__title">{data.title}</span>
-				<span className="main-item__price-label">{data.price}€</span>
-			</p>
-		</div>
+
+			<div className="main-item__body">
+				<h3>{data.title}</h3>
+				<h4 className="price-label">{data.price.toFixed(2)}€</h4>
+			</div>
+		</article>
 	);
 };

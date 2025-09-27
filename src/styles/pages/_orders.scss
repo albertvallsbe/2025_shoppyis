@@ -1,0 +1,69 @@
+@use "../base/colors";
+@use "../base/variables";
+@use "../base/typography";
+@use "../elements/icons";
+
+.orders {
+	display: grid;
+	row-gap: variables.$size-medium;
+
+	width: 20rem;
+	margin: 0 auto;
+
+	border: variables.$border solid colors.$primary-lighter;
+	border-top-left-radius: variables.$border-radius;
+	border-top-right-radius: variables.$border-radius;
+
+
+
+	&__header {
+		display: grid;
+		// grid-template-columns: auto 1fr;
+		align-items: center;
+		position: relative;
+		min-height: 2.25rem;
+
+		padding: variables.$size-medium;
+
+		.circle-icon {
+			@extend %circle-icon;
+
+			position: absolute;
+			top: 1.5rem;
+			left: 2.5rem;
+		}
+
+		h1 {
+			@extend %heading-doble-extra-large;
+
+			justify-self: center;
+			text-align: center;
+
+			color: colors.$primary-main;
+		}
+	}
+
+	&__list {
+		display: grid;
+		overflow: auto;
+
+		grid-auto-rows: min-content;
+		gap: variables.$size-small;
+		align-content: start;
+		justify-items: stretch;
+
+		padding: variables.$size-medium;
+		min-height: 0;
+	}
+
+	&__item {
+		text-decoration: none;
+		color: inherit;
+	}
+
+	&__empty {
+		color: colors.$neutral-darker;
+		text-align: center;
+		padding: variables.$size-medium;
+	}
+}

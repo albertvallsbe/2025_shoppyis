@@ -32,15 +32,15 @@ export const OrderCard = (orderCardProps: OrderCardProps) => {
 	}
 
 	return (
-		<div className="line-item" onClick={onClick}>
-			<figure className="line-item__media">
+		<article className="line-item" onClick={onClick}>
+			<figure className="line-item__figure">
 				<img className="line-item__img" src={imageUrl} alt={title} />
 			</figure>
-			<div className="line-item__info">
-				<p className="line-item__title">{title}</p>
-				<p className="line-item__price-label">{price}€</p>
+			<div className="line-item__body">
+				<h3>{title}</h3>
+				<h4 className="price-label">{price.toFixed(2)}€</h4>
 			</div>
 			{renderXMarkIcon}
-		</div>
+		</article>
 	);
 };

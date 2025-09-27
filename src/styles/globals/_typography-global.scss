@@ -1,0 +1,11 @@
+@use "sass:color";
+@use "../base/colors";
+@use "../base/variables";
+@use "../base/typography";
+@use "../elements/icons";
+
+h4.price-label {
+	@extend %text-medium;
+
+	color: colors.$neutral-dark;
+}

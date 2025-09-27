@@ -1,4 +1,6 @@
+@use "../base/colors";
 @use "../base/variables";
+@use "../base/typography";
 
 .layout {
 	width: min(variables.$viewport-max-width, 100% - 2rem);
@@ -6,4 +8,14 @@
 	margin-top: variables.$nav-height;
 	margin-inline: auto;
 	padding-inline: variables.$size-small;
+
+	h1 {
+
+		@extend %heading-doble-extra-large;
+
+		justify-self: center;
+		text-align: center;
+
+		color: colors.$primary-main;
+	}
 }
