@@ -10,7 +10,7 @@ export const CheckoutAsideCard = () => {
 	const context = useContext(CartContext);
 
 	if (!context.isCheckoutAsideMenuOpen) {
-		// opcional: deixa l’aside muntat però ocult si prefereixes
+		// opcional: deixa l'aside muntat però ocult si prefereixes
 		return null;
 	}
 
@@ -35,6 +35,7 @@ export const CheckoutAsideCard = () => {
 		context.setOrder((previousOrders) => [...previousOrders, orderToAdd]);
 		context.setCartProducts([]);
 		context.closeCheckoutAsideMenu();
+		context.closeProductDetail();
 		context.setSearchByTitle("");
 	};
 
@@ -47,9 +48,9 @@ export const CheckoutAsideCard = () => {
 	return (
 		<aside className="aside-right">
 			<div className="aside-right__header">
-				<h2>My Order</h2>
+				<h3>My Order</h3>
 				<button
-					className="aside-right__circle-icon"
+					className="circle-icon"
 					type="button"
 					aria-label="Close detail"
 					onClick={context.closeCheckoutAsideMenu}
@@ -71,17 +72,19 @@ export const CheckoutAsideCard = () => {
 					/>
 				))}
 			</div>
-			<div className="aside-right__footer">
-				<p className="aside-right__total">
-					<span className="aside-right__total-label">Total:</span>
-					<span className="aside-right__price-label">
+			<div className="aside-right__body">
+				<div className="aside-right__total">
+					<label>Total price: </label>
+					<h4 className="price-label">
 						{totalPrice(context.cartProducts).toFixed(2)}€
-					</span>
-				</p>
-				<Link to="/my-order/last">
+					</h4>
+				</div>
+			</div>
+			<div>
+				<Link to="/my-order/last" className="aside-right__footer">
 					<button
 						type="button"
-						className="button__text"
+						className="button button--primary"
 						onClick={() => handleCheckout()}
 						disabled={context.cartProducts.length === 0}
 					>

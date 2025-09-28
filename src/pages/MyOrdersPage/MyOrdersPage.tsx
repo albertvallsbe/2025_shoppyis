@@ -9,15 +9,15 @@ export const MyOrdersPage = () => {
 
 	return (
 		<Layout>
-			<section className="orders-page">
-				<header className="orders-page__header">
+			<section className="orders">
+				<header className="orders__header">
 					<h1>My Orders</h1>
 				</header>
 
-				<div className="aside-right__list">
+				<div className="orders__list">
 					{context.order.map((order, index) => (
 						<Link
-							className="orders-page__item"
+							className="orders__item"
 							key={index}
 							to={`/my-order/${order.id}`}
 							state={order}

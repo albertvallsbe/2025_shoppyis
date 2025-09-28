@@ -5,7 +5,7 @@
 .help-overlay {
 	position: fixed;
 	inset: 0;
-	background: rgba(0, 0, 0, 0.8);
+	background-color: colors.$neutral-darkest;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -14,7 +14,7 @@
 }
 
 .help-modal {
-	background: colors.$neutral-lightest;
+	background-color: colors.$neutral-lightest;
 	padding: variables.$size-large;
 	border-radius: variables.$border-radius;
 	box-shadow: variables.$shadow-light;
@@ -43,7 +43,7 @@
 	position: absolute;
 	top: variables.$size-small;
 	right: variables.$size-small;
-	background: transparent;
+	background-color: transparent;
 	border: none;
 	font-size: 1.25rem;
 	line-height: 1;
@@ -61,7 +61,7 @@
 	word-break: break-all;
 	resize: none;
 	overflow-y: auto;
-	border: 1px solid color.scale(colors.$primary-main, $alpha: -80%);
+	border: 1px solid colors.$primary-light;
 	border-radius: variables.$border-radius;
 	background-color: colors.$neutral-lightest;
 	color: colors.$neutral-dark;
@@ -74,7 +74,7 @@
 }
 
 .web-options__info {
-	background: transparent;
+	background-color: transparent;
 	border: none;
 	font-size: 0.75rem;
 	cursor: pointer;

@@ -1,12 +1,6 @@
 @use "sass:color";
 @use "../base/colors";
 @use "../base/variables";
-@use "../reusable/reusable-forms";
-
-.home-search {
-	@extend .formInput;
-	margin-left: variables.$size-large;
-}
 
 .main-items-grid {
 	display: grid;
@@ -15,7 +9,9 @@
 	gap: variables.$size-large;
 	align-items: start;
 
-	width: min(1200px, 100% - 2rem);
+	width: min(variables.$viewport-max-width, 100% - 2rem);
 	margin: variables.$size-medium auto;
 	padding: variables.$size-small;
+
+
 }

@@ -6,16 +6,16 @@ export const ProductDetail = () => {
 	const context = useContext(CartContext);
 
 	if (!context.isProductDetailOpen || !context.productToShow) {
-		// opcional: deixa l’aside muntat però ocult si prefereixes
+		// opcional: deixa l'aside muntat però ocult si prefereixes
 		return null;
 	}
 
 	return (
 		<aside className="aside-right">
 			<div className="aside-right__header">
-				<h2>Detail</h2>
+				<h3>{context.productToShow.title}</h3>
 				<button
-					className="aside-right__circle-icon"
+					className="circle-icon"
 					type="button"
 					aria-label="Close detail"
 					onClick={context.closeProductDetail}
@@ -33,11 +33,14 @@ export const ProductDetail = () => {
 			</figure>
 
 			<div className="aside-right__body">
-				<span className="price-label">{context.productToShow.price}€</span>
-				<span className="aside-right__title">
-					{context.productToShow.title}
-				</span>
-				<p className="aside-right__desc">{context.productToShow.description}</p>
+				<h3>{context.productToShow.title}</h3>
+				<div className="aside-right__total">
+					<label>Price: </label>
+					<h4 className="price-label">
+						{context.productToShow.price.toFixed(2)}€
+					</h4>
+				</div>
+				<p>{context.productToShow.description}</p>
 			</div>
 		</aside>
 	);

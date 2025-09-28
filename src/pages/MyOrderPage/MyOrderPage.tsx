@@ -30,25 +30,25 @@ export const MyOrderPage = (): JSX.Element => {
 
 	return (
 		<Layout>
-			<section className="order-page">
-				<header className="order-page__header">
-					<Link to="/my-orders" className="order-page__back" aria-label="Back">
+			<section className="orders">
+				<header className="orders__header">
+					<h1>My Order</h1>
+					<Link to="/my-orders" className="circle-icon" aria-label="Back">
 						<ChevronLeftIcon />
 					</Link>
-					<h1 className="order-page__title">My Order</h1>
 				</header>
 
 				{isNotFound ? (
-					<p className="order-page__empty">
-						No s’ha trobat aquesta comanda.{" "}
+					<p className="orders__empty">
+						No s'ha trobat aquesta comanda.{" "}
 						<Link to="/my-orders">Torna a My Orders</Link>
 					</p>
 				) : products.length === 0 ? (
-					<p className="order-page__empty">
+					<p className="orders__empty">
 						No tens cap producte en aquesta comanda.
 					</p>
 				) : (
-					<div className="aside-right__list">
+					<div className="orders__list">
 						{products.map((product) => (
 							<OrderCard
 								key={product.id}

@@ -19,21 +19,20 @@ export const HomePage = (): JSX.Element => {
 
 	return (
 		<Layout>
-			<header className="orders-page__header">
+			<header>
 				<h1>Shoppyis</h1>
 			</header>
-			<input
-				type="text"
-				placeholder="Search a product"
-				className="home-search"
-				onChange={(event) => context.setSearchByTitle(event.target.value)}
-			/>
-			<div className="main-items-grid">
-				{/* {context.items?.map((item) => (
-					<MainItem key={item.id} data={item} />
-				))} */}
-				{renderView()}
+
+			<div className="form__group">
+				<input
+					type="text"
+					placeholder="Search a product"
+					className="form__control"
+					onChange={(event) => context.setSearchByTitle(event.target.value)}
+				/>
 			</div>
+
+			<div className="main-items-grid">{renderView()}</div>
 			<ProductDetail />
 		</Layout>
 	);
